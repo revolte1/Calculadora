@@ -1,8 +1,8 @@
-Feature: Dividir dos numeros
+Feature: multiplicar dos numeros
 
-    Scenario Outline: Dividir
+    Scenario Outline: multiplicar
         Given que quiero realizar operaciones aritméticas
-        When desee <operacion> <num1> y <num2>
+        When acceda <operacion> <num1> y <num2>
         Then el resultado debe ser <result>
         
         Examples: multiplicar de Numeros
