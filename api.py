@@ -9,7 +9,7 @@ def read_root():
    return {"Hola": "Mundo"}
 
 @app.get("/sumar")
-def call_suma(num1: int = 0, num2: int = 0):
+def call_suma(num1: int = 1, num2: int = 1):
    return {
       "result": calc.sumar(num1, num2)
    }
@@ -21,7 +21,7 @@ def call_suma(num1: int = 0, num2: int = 0):
    }   
 
 @app.get("/multiplicar")
-def call_suma(num1: int = 0, num2: int = 0):
+def call_suma(num1: int = 2, num2: int = 5):
    return {
       "result": calc.multiplicar(num1, num2)
    }
