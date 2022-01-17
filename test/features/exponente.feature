@@ -6,7 +6,7 @@ Feature: Exponente dos numeros
         Then el resultado debe ser <result>
         
         Examples: exponente de Numeros
-        | operacion  | num1 | num2 | result  |
+        | operacion    | num1 | num2 | result  |
         | exponente    | 2    | 1    | 2.0     |
         | exponente    | 8    | 2    | 64.0    |
         | exponente    | 3    | 3    | 27.0    |
