@@ -34,5 +34,12 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual("Invalid", self.calc.dividir(0,0))
         self.assertEqual("Invalid", self.calc.dividir(2,-2))
 
+     def test_exponencial(self):
+        self.assertEqual(2, self.calc.exponente(2,1))
+        self.assertEqual(64, self.calc.exponente(8,2))
+        self.assertEqual(27, self.calc.exponente(3,3))
+        self.assertEqual("Invalid", self.calc.exponente(0,0))
+        self.assertEqual("Invalid", self.calc.exponente(2,-2))
+
 if __name__ == '__main__':
     unittest.main()

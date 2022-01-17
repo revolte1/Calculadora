@@ -31,3 +31,9 @@ def call_suma(num1: int = 0, num2: int = 0):
    return {
       "result": calc.dividir(num1, num2)
    }
+
+@app.get("/exponente")
+def call_suma(num1: int = 0, num2: int = 0):
+   return {
+      "result": calc.exponente(num1, num2)
+   }

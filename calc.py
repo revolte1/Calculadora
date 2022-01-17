@@ -26,3 +26,8 @@ class Calc:
         if num1 < 0 or num2 <0:
             return True
         return False
+
+    def exponente(self, num1, num2):
+        if self.is_invalid(num1, num2):
+            return "Invalid"
+        return num1 ** num2
