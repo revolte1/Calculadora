@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "5a38baa2-ec22-4a87-b09d-316a317dde4b",
+		"name": "test-final-version",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Call Operation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"status code is 200\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test((\"validate result\"+pm.iterationData.get(\"result\")), function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result).to.eql(pm.iterationData.get('result'));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/{{operation}}?num1={{num1}}&num2={{num2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{operation}}"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "{{num1}}"
+						},
+						{
+							"key": "num2",
+							"value": "{{num2}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/sumar?num1=2&num2=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sumar"
+							],
+							"query": [
+								{
+									"key": "num1",
+									"value": "2"
+								},
+								{
+									"key": "num2",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{}"
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/sumar?num1=2&num2=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sumar"
+							],
+							"query": [
+								{
+									"key": "num1",
+									"value": "2"
+								},
+								{
+									"key": "num2",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"detail\": [\n  {\n   \"loc\": [\n    \"dolor in\",\n    \"labore\"\n   ],\n   \"msg\": \"moll\",\n   \"type\": \"ea exercitation elit sint\"\n  },\n  {\n   \"loc\": [\n    \"fugiat sunt id\",\n    \"quis cillum esse \"\n   ],\n   \"msg\": \"sint aute culpa amet\",\n   \"type\": \"deserunt magna ex\"\n  }\n ]\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}

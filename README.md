@@ -22,4 +22,9 @@ Proyecto que nos permitira ejecutar operaciones basicas.
    ```
    uvicorn calc:app --port 5000 --reload
    ```
+4. instalar newman
+   ```
+   npm install newman
+   ```
+
    

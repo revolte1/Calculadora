@@ -15,4 +15,7 @@ def step_impl(context, operacion, num1, num2):
 
 @then('el resultado debe ser {result}')
 def step_impl(context, result):
+    print(str(context.api_response.json().get("result")))
+    print(result)
     assert str(context.api_response.json().get("result")) == str(result)
+    
